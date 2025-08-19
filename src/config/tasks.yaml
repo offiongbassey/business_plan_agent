@@ -1,0 +1,79 @@
+market_research_task:
+  description: >
+    Conduct comprehensive, current-year research for {business_name} built around
+    {business_idea} and monetized via {pricing_mode}. Deliver a rigorous dossier that includes:
+    - Market definition & segmentation, global and regional (focus on primary geos of opportunity)
+    - Market sizing with TAM/SAM/SOM and explicit assumptions & sources
+    - Trends: consumer behavior, regulatory/ESG pressures, logistics & fintech tie-ins
+    - Competitive landscape: 10–20 direct/adjacent competitors with profiles
+    - Competitor matrix: features, pricing, integrations, target segments, partnerships
+    - Pricing benchmarks and common revenue models in the category
+    - Customer personas & JTBD; adoption frictions & catalysts
+    - Risks & constraints (supply, verification, double-counting, greenwashing, policy changes)
+    - Source list with links, dates, and a brief credibility note per source
+    Use structured subsections, tables, and bullet points. Prefer verified/primary sources.
+  expected_output: >
+    A citation-rich Markdown **Research Dossier** with these sections:
+    1) Executive Snapshot of Insights (10 bullets)
+    2) Market Definition & Segmentation
+    3) Market Sizing (TAM/SAM/SOM) with formulas & assumptions
+    4) Trends & Regulatory Drivers (with dates/regions)
+    5) Customer Personas & JTBD
+    6) Competitive Landscape (individual profiles)
+    7) Competitor Feature/Pricing Matrix (Markdown tables)
+    8) Pricing Benchmarks & Monetization Patterns
+    9) Risks & Constraints (with mitigation leads)
+    10) Sources & References (links + dates)
+  agent: research_strategist
+
+business_modeling_task:
+  description: >
+    Build an investor-grade model & strategy for {business_name} using {pricing_mode} and
+    grounded in the Research Dossier context. Deliver:
+    - Clear value prop and monetization logic
+    - Pricing architecture (tiers, metering, add-ons; if hybrid, define revenue mix)
+    - Unit economics (per merchant and/or per transaction): COGS, gross margin, variable costs
+    - Go-to-market motion (self-serve, PLG, partner, enterprise) aligned to ICPs
+    - CAC model (paid/organic/partner), Payback, LTV (cohort-based if possible)
+    - 3–5 year P&L projections (Base/Best/Worst) with driver table
+    - Break-even analysis and key sensitivity tables
+    - Headcount & opex plan (functions, hiring cadence)
+    - Use of funds mapped to milestones (product, integrations, compliance, sales)
+  expected_output: >
+    A Markdown **Financials & Strategy Report** containing:
+    - Business Model Overview & Pricing Framework (tables)
+    - Unit Economics (per unit & blended)
+    - CAC/LTV/Payback tables with assumptions
+    - Go-to-Market plan with funnel benchmarks
+    - 3–5 year P&L projections (3 scenarios) in Markdown tables
+    - Break-even & Sensitivity analyses
+    - Headcount & Opex plan
+    - Milestones & Use of Funds
+  agent: business_architect
+
+business_plan_task:
+  description: >
+    Craft a full, investor-ready business plan for {business_name} built on the Research
+    Dossier and Financials & Strategy Report. It must be persuasive and thorough, suitable
+    for top-tier VC review. Include:
+    - Executive Summary
+    - Problem (with quantification & proof)
+    - Solution (architecture, integrations, verification, compliance)
+    - Market Opportunity (TAM/SAM/SOM, segments, timing)
+    - Business Model & Pricing ({pricing_mode}; tiers, fees, examples)
+    - Go-to-Market Strategy (ICP, motion, channels, partnerships, growth loops)
+    - Competitive Analysis (narrative + matrices + positioning)
+    - Operations Plan (tech roadmap, data, supply/offset verification, QA, security)
+    - Team & Hiring Plan (key gaps & advisors)
+    - Financial Highlights (key metrics, pathway to margins, runway)
+    - Risks & Mitigation
+    - Impact & Vision (KPIs, measurement cadence, standards)
+    - Funding Ask & Use of Funds (12–24 month milestones)
+    Appendices: detailed tables, assumptions, references.
+  expected_output: >
+    A polished, publication-ready **Investor Business Plan** in Markdown.
+    It must be structured with clear H1/H2/H3 headings, narrative paragraphs,
+    bullet points where helpful, and well-formatted tables. Include an
+    Appendix with references and data tables. No placeholders.
+  agent: venture_writer
+  output_file: "{business_name}_business_plan.md"
